@@ -7,6 +7,7 @@ import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
 import Admin from './pages/Admin';
 import Expenses from './pages/Expenses';
+import ChargeSheetDetails from './pages/ChargeSheetDetails';
 
 function HomeRedirect() {
   const { user, loading } = useAuth();
@@ -37,6 +38,15 @@ function AppRoutes() {
         </ProtectedRoute>
         }
         />
+
+        <Route
+  path="/expenses/:id"
+  element={
+    <ProtectedRoute>
+      <ChargeSheetDetails />
+    </ProtectedRoute>
+  }
+/>
     </Routes>
   );
 }

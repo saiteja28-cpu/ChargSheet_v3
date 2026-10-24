@@ -429,6 +429,7 @@ export default function Dashboard() {
                     'Pending',
                     'Remaining',
                     'Status',
+                    'Details',
                     'Repayment',
                   ].map(label => (
                     <th key={label} style={{
@@ -510,6 +511,19 @@ export default function Dashboard() {
                           {statusLabel(charge.status)}
                         </span>
                       </td>
+
+                      <td style={{ padding: 12, whiteSpace: 'nowrap' }}>
+  <Link
+    to={`/expenses/${charge.id}`}
+    style={{
+      color: '#176b4d',
+      fontWeight: 700,
+      textDecoration: 'none',
+    }}
+  >
+    View Details
+  </Link>
+</td>
 
                       <td style={{ padding: 12, minWidth: 175 }}>
                         {canRequest ? (
